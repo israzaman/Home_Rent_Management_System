@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HomeRentMSDB" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HomeRentMSDB.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="ToLet.Properties.Settings" SettingsPropertyName="HomeRentMSDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DurationTable" Member="DurationTables">
+    <Type Name="DurationTable">
+      <Column Name="DurationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Duration" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Home Category]" Member="Home_Categories">
+    <Type Name="Home_Category">
+      <Column Name="HomeCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Home Category]" Member="Home_Category1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Location" Member="Locations">
+    <Type Name="Location">
+      <Column Name="LocationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Location Name]" Member="Location_Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomCountTable" Member="RoomCountTables">
+    <Type Name="RoomCountTable">
+      <Column Name="RoomCountId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Room Count]" Member="Room_Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Tenant Category]" Member="Tenant_Categories">
+    <Type Name="Tenant_Category">
+      <Column Name="TenantCategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Tenant Category]" Member="Tenant_Category1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserCategory" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_UserInfo" Member="UserInfos" ThisKey="UserId" OtherKey="UserId" Type="UserInfo" />
+      <Association Name="User_Property" Member="Properties" ThisKey="UserId" OtherKey="UserId" Type="Property" />
+      <Association Name="User_Request" Member="Requests" ThisKey="UserId" OtherKey="UserId" Type="Request" />
+      <Association Name="User_Tenant" Member="Tenants" ThisKey="UserId" OtherKey="UserId" Type="Tenant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserInfo" Member="UserInfos">
+    <Type Name="UserInfo">
+      <Column Name="UserInfoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[First Name]" Member="First_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Last Name]" Member="Last_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nid_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Date_of_Birth" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Profile Pic]" Member="Profile_Pic" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_UserInfo" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Property" Member="Properties">
+    <Type Name="Property">
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HomeCategory" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenantCategory" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoomCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Detailed Address]" Member="Detailed_Address" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="[Additional Comments]" Member="Additional_Comments" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="RentRangeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyImage" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PropertyStatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Request for rent]" Member="Request_for_rent" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Property_Request" Member="Requests" ThisKey="PropertyId" OtherKey="PropertyId" Type="Request" />
+      <Association Name="Property_Tenant" Member="Tenants" ThisKey="PropertyId" OtherKey="PropertyId" Type="Tenant" />
+      <Association Name="User_Property" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Request" Member="Requests">
+    <Type Name="Request">
+      <Column Name="reqId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Property_Request" Member="Property" ThisKey="PropertyId" OtherKey="PropertyId" Type="Property" IsForeignKey="true" />
+      <Association Name="User_Request" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tenant" Member="Tenants">
+    <Type Name="Tenant">
+      <Column Name="TenantId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Payment Status]" Member="Payment_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Property_Tenant" Member="Property" ThisKey="PropertyId" OtherKey="PropertyId" Type="Property" IsForeignKey="true" />
+      <Association Name="User_Tenant" Member="User" ThisKey="UserId" OtherKey="UserId" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Rent Range]" Member="Rent_Ranges">
+    <Type Name="Rent_Range">
+      <Column Name="RentRangeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Rent Range]" Member="Rent_Range1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MailTable" Member="MailTables">
+    <Type Name="MailTable">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fromu" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[to]" Member="to" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="delefrom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="deletto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

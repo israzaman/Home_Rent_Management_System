@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78A39441-BCB9-4BD5-99ED-797FF378F876}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ToLet</RootNamespace>
+    <AssemblyName>ToLet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\MetroFramework\metroframework-modern-ui-master\metroframework-modern-ui-master\all dll\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\..\MetroFramework\metroframework-modern-ui-master\metroframework-modern-ui-master\all dll\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\..\MetroFramework\metroframework-modern-ui-master\metroframework-modern-ui-master\all dll\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddNewProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewProperty.Designer.cs">
+      <DependentUpon>AddNewProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\EditProfile.cs" />
+    <Compile Include="Classes\Mail.cs" />
+    <Compile Include="Classes\PropertyDetails.cs" />
+    <Compile Include="Classes\TenantClass.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="Database\DBConnectionProvider.cs" />
+    <Compile Include="Database\DBDataList.cs" />
+    <Compile Include="Database\DBDataProvider.cs" />
+    <Compile Include="DataClasses1.cs">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="MailBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailBox.Designer.cs">
+      <DependentUpon>MailBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainUI.Designer.cs">
+      <DependentUpon>MainUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertyDetailsForm.Designer.cs">
+      <DependentUpon>PropertyDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchResultForm.Designer.cs">
+      <DependentUpon>SearchResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start.Designer.cs">
+      <DependentUpon>Start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddNewProperty.resx">
+      <DependentUpon>AddNewProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="MailBox.resx">
+      <DependentUpon>MailBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainUI.resx">
+      <DependentUpon>MainUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyDetailsForm.resx">
+      <DependentUpon>PropertyDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchResultForm.resx">
+      <DependentUpon>SearchResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\light-floor-texture-wood.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginwooden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginwooden2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Signupwooden1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Signupwooden2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4120371663_bf524a0538.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\submit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\submit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutTAb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MailBoxTAB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MunnaTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MyProfileTAB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\081682-glossy-waxed-wood-icon-business-www-search-ps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\light_wood_texture_by_drsela-d4r0g7h.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woodenRound1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002252-glossy-waxed-wood-icon-media-a-media28-stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woodbutt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightbulboff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightbulbon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powerBLUE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powerRED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woodensearch1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woodensearch12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woodsearchRED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wooden-home2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchasguestBLACK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchasguestRED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woodenBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\019005-glossy-waxed-wood-icon-symbols-shapes-smiley-happy2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\browse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HomeRentMSDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HomeRentMSDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>HomeRentMSDB.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\HomeBTN1111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
